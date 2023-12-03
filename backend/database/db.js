@@ -1,17 +1,18 @@
-const mysql = require('mysql');
+import mysql from 'mysql';
+
 
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '123',
-  database: 'Carritos'
+  password: '',
+  database: 'carritos'
 });
 
 db.connect((err) => {
   if (err) {
     throw err;
   }
-  console.log('Conectado a la base de datos...');
+  console.log('Conectado a la base de datos... http://localhost:3000');
 });
 
-module.exports = db;
+export default db;
