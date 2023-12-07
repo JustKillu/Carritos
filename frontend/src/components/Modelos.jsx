@@ -16,9 +16,10 @@ function Modelos() {
      <div className='Back'></div>
      <div className="Car"></div>
      <div className="Car2"></div>
-      <h2>Autos</h2>
+      <h1 className='titulo'>Autos en Venta</h1>
      </div>
     <div className='Modeloscard'>
+      <div className='content'>
       <h1>Modelos</h1>
       {modelos ? (
         <div>
@@ -28,6 +29,8 @@ function Modelos() {
       ) : (
         <p>Cargando modelos...</p>
       )}
+      </div>
+      
     </div>
     </div>
   );

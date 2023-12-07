@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles/Login.css';
-import Video1 from '../assets/Video1.mp4';
+import Video1 from '../assets/CArrito.mp4';
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');

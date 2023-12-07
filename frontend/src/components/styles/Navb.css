@@ -25,6 +25,7 @@ header{
 	border-radius: 10px;
 	width: 15%;
 	text-align: center;
+	text-shadow: gray 0.01em 0.01em 0.1em;
 }
 
 .header {
