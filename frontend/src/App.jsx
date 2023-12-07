@@ -1,26 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import './App.css'; 
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Inicio from './components/Inicio.js/index.js';
+import Comprar from './components/Comprar.js';
+import Login from './components/Login.js/index.js';
+import Register from './components/Register.js';
 
-function Modelos() {
-  const [modelos, setModelos] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:3000/modelos')
-      .then(response => response.json())
-      .then(data => setModelos(data));
-  }, []);
-
+function App() {
   return (
-    <div className="modelos">
-      {modelos.map(modelo => (
-        <div key={modelo.id} className="modelo-card">
-          <h2>{modelo.Modelo}</h2>
-          <p>Precio: {modelo.Precio}</p>
-          <p>Fecha: {modelo.Fecha}</p>
-        </div>
-      ))}
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Inicio} />
+        <Route path="/comprar" component={Comprar} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+      </Switch>
+    </Router>
   );
 }
 
-export default Modelos;
+export default App;
