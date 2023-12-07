@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles/Login.css';
+
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -15,37 +16,39 @@ const Login = () => {
 
     const handleLogin = async (event) => {
         event.preventDefault();
- 
+
         if (!username || !password) {
             setError('Por favor, rellena todos los campos.');
             return;
         }
-    
+
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username: username, password: password })
         };
-    
+
         try {
             const response = await fetch('http://localhost:3000/login', requestOptions);
             const data = await response.json();
-    
+
             if (data.success) {
                 console.log(data); 
                 localStorage.setItem('sessionToken', data.token);
                 setIsLoggedIn(true);
                 window.location.reload();
+            } else {
+                setError(data.message);
             }
         } catch (error) {
             console.error('Error:', error); 
+            setError('Error del servidor');
         }
     };
-    
+
     if (isLoggedIn) {
         return <p className="_login-message">Ya estás logeado.</p>;
     }
-    
 
     return (
         <div className="_login-container">
