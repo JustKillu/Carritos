@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles/Login.css';
-
+import Video1 from '../assets/Video1.mp4';
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -51,6 +51,13 @@ const Login = () => {
     }
 
     return (
+        <div>
+        <div className='Videoparallax'>
+      <video autoPlay loop muted className='video1'>
+        <source src={Video1} type="video/mp4" />
+      </video>
+      </div>
+
         <div className="_login-container">
             <h2 className="_login-title">Iniciar sesión</h2>
             <form onSubmit={handleLogin} className="_login-form">
@@ -59,6 +66,7 @@ const Login = () => {
                 <input type="submit" value="Iniciar sesión" className="_login-submit" />
                 {error && <p className="_login-error">{error}</p>}
             </form>
+        </div>
         </div>
     );
 };

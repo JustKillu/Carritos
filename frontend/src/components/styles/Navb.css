@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
 body{
-	background-color: gray;
+	background-color: rgb(12, 12, 12);
 }
 * {
 	padding: 0;
@@ -9,53 +9,83 @@ body{
 	font-family: "Roboto", sans-serif;
 }
 
-:root {
-	--mainColor: #325c29;
-	--mainColorLight: #5767aa;
-	--secondaryColor: #2bdb92;
-	--textColor: #eee;
+.title{
+	margin:  -0.3rem 2rem;
+	padding: 5px;
+	color: #fff;
+	font-size: 2rem;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	background-color: black;
+	border-radius: 10px;
+	width: 15%;
+	text-align: center;
 }
 
-header {
-	position:fixed;
-	top: 0;
-	z-index: 999;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 90px;
+.header {
+	position:top;
+	height: 0%;
 	width: 100%;
 	padding: 0 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 	background-color: transparent;
-	color: var(--textColor);
-	font-size: 20px;
-	padding: 35px;
+	color: #fff;
+	
 }
-header.nav{
-	background-color: gray;;
+
+.nav{
+	position:fixed;
+	z-index: 999;
+	height: auto;
+	width: 100%;
+	padding: 0 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background-color: gray;
+	color: #fff;
+	
+}
+.flex{
+	display: flex;
+	justify-content:space-around;
 }
 
 
-nav a {
+.box{
 	margin: 0 2rem;
-	color: var(--textColor);
+	color: #fff;
+	font-size: 1.2rem;
 	text-decoration: none;
+	transition: 0.5s;
+	background-color: black;
+	border-radius: 0.5rem;
+	border: black solid;
+	padding: 4px;
+
 }
 
-nav a:hover {
-	color: var(--secondaryColor);
+.box:hover {
+	color: black;
+	background-color: #fff;
+	padding: 8px;
+
 }
+
 
 header .nav-btn {
+	
 	padding: 5px;
 	cursor: pointer;
 	background: transparent;
 	border: none;
 	outline: none;
-	color: var(--textColor);
+	color: #fff;
 	visibility: hidden;
 	opacity: 0;
 	font-size: 1.8rem;
+	
 }
 
 header div,
@@ -82,13 +112,14 @@ nav {
 		align-items: center;
 		justify-content: center;
 		gap: 1.5rem;
-		background-color: var(--mainColor);
+		background-color: gray;
 		transition: 1s;
 	}
 
 	header .responsive_nav {
 		transform: translateY(100vh);
 	}
+
 
 	nav .nav-close-btn {
 		position: absolute;
@@ -100,16 +131,21 @@ nav {
 		font-size: 1.5rem;
 	}
 }
-.logout-button {
-    background-color: transparent;
-    border: none;
+.nav-link {
+    background-color: black;
+    border: black 2px solid;
+	border-radius: 0.5rem;
     cursor: pointer;
-    color: var(--textColor);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    display: inline-block;
+    color: #fff ;
+    padding: 4px;
+	margin: 3rem;
+	transition: 0.5s;
+    display: flex;
+	font-size: 1.1rem;
 }
 
-.logout-button:hover {
-	color: var(--secondaryColor);
+.nav-link:hover {
+	color: black;
+	background-color: white;
+	padding: 8px
 }

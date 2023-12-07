@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "./styles/Navb.css";
 
 const LogoutButton = () => {
@@ -30,6 +31,16 @@ const LogoutButton = () => {
 
 function Navb() {
 
+	const showNavbar = () => {
+
+        const navRef = useRef();
+        
+		navRef.current.classList.toggle(
+			"responsive_nav"
+		);
+	};
+    
+
     const [navbar, setNav] = useState(false);
 
     const changeBackground = () => {
@@ -45,14 +56,25 @@ function Navb() {
     }, []);
 
     return (
-        <header className={navbar ? "nav" : "header"}>
-            <h3>QueHaceres</h3>
+        <header className={navbar ? "nav flex" : "header flex"}>
+            <h1 className="title">Cars in Stock</h1>
             <nav>
-                <a href="/" className="nav-link">Inicio</a>
-                <a href="/agregartasks" className="nav-link">Añadir Tareas</a>
-                <a href="/listas" className="nav-link">Lista de tareas</a>
-                <LogoutButton />
+                <a href="/" className="box">Inicio</a>
+                <a href="/Modelos" className="box">Ve nuestro catalogo</a>
+                <a href="/listas" className="box">Lista de tareas</a>
+                <LogoutButton className="box" />
+                <button
+					className="nav-btn nav-close-btn"
+					onClick={showNavbar}>
+					<FaTimes />
+				</button>    
             </nav>
+            <button
+				className="nav-btn"
+				onClick={showNavbar}>
+				<FaBars />
+			</button>
+
         </header>
     );
 };
