@@ -17,8 +17,15 @@ const LogoutButton = () => {
         window.location.reload(); 
     };
 
-	return isLoggedIn && <button className="nav-link logout-button" onClick={handleLogout}>Cerrar sesión</button>;
+    const handleLogin = () => {
+        window.location.href = "/login";
+    };
 
+    return (
+        isLoggedIn ? 
+        <button className="nav-link logout-button" onClick={handleLogout}>Cerrar sesión</button> :
+        <button className="nav-link login-button" onClick={handleLogin}>Iniciar sesión</button>
+    );
 };
 
 function Navb() {
