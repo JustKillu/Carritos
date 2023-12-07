@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Inicio from './components/Inicio.jsx';
+import Login from './components/Login.jsx';
 import Navb from './components/Navbar.jsx';
 
 const LogoutButton = () => {
@@ -30,6 +31,7 @@ function App() {
       <LogoutButton />
       <Routes>
         <Route path="/" element={<Inicio />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
     </>
