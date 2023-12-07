@@ -18,6 +18,9 @@ function Inicio() {
         tecnología para mejorar la velocidad, la eficiencia y la seguridad.
       </p>
       </div>
+      <div className="secciones">
+          <h2> Nuestras opciones </h2>
+      </div>
       </div>
   );
 }

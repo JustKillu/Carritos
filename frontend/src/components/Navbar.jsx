@@ -44,7 +44,7 @@ function Navb() {
     const [navbar, setNav] = useState(false);
 
     const changeBackground = () => {
-        if (window.scrollY >= 80) {
+        if (window.scrollY >= 800) {
             setNav(true);
         } else {
             setNav(false);

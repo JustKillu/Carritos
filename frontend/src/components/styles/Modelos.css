@@ -1,4 +1,75 @@
 .Modeloscard{
-    margin-top: 200px;
-    
+   padding: 2rem;
+   font-size: 2rem;
+   background-color: black;
+   height: 1000px;
+}
+
+.wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+}
+
+.Head{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.Back{
+    background-image: url('../../assets/Garaje.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px;
+    text-align: center;
+
+}
+
+.Car{
+    background-image: url('../../assets/Ferrari.png');
+    background-size: 40%;
+    top: 20%;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 40%;
+}
+
+.Car2{
+    background-image: url('../../assets/Dodge car.png');
+    background-size: 35%;
+    top: 20%;
+    background-repeat: no-repeat;
+    background-position: center;
+    right: 30%;
+}
+
+
+.Back , 
+.Car ,
+.Car2 {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.Back{
+    transform: translateZ(-10px) scale(2);
+}
+
+.Car{
+    transform: translateZ(-8px) scale(1.5);
+}
+
+.Car2{
+    transform: translateZ(-8px) scale(1.5);
 }

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Video from '../assets/Video.mp4';
 import '../components/styles/Modelos.css';
 function Modelos() {
   const [modelos, setModelos] = useState(null);
@@ -12,6 +11,13 @@ function Modelos() {
   }, []);
 
   return (
+    <div className='wrapper'>
+      <div className='Head'>
+     <div className='Back'></div>
+     <div className="Car"></div>
+     <div className="Car2"></div>
+      <h2>Autos</h2>
+     </div>
     <div className='Modeloscard'>
       <h1>Modelos</h1>
       {modelos ? (
@@ -22,6 +28,7 @@ function Modelos() {
       ) : (
         <p>Cargando modelos...</p>
       )}
+    </div>
     </div>
   );
 }
