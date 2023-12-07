@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
+import Video from '../assets/Video.mp4';
+import '../inicio.css';
+import '../Navb.css';
 function Inicio() {
   const [modelos, setModelos] = useState(null);
 
@@ -12,6 +14,9 @@ function Inicio() {
 
   return (
     <div>
+      <video autoPlay loop muted className='video1'>
+        <source src={Video} type="video/mp4" />
+      </video>
       <h1>Inicio</h1>
       {modelos ? (
         <div>
