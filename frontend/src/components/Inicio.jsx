@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Video from '../assets/Video.mp4';
 import '../inicio.css';
-import '../Navb.css';
 function Inicio() {
   const [modelos, setModelos] = useState(null);
 

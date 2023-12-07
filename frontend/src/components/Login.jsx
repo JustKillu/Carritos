@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import './styles/Login.css';
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -43,16 +43,20 @@ const Login = () => {
     };
     
     if (isLoggedIn) {
-        return <p>Ya estás logeado.</p>;
+        return <p className="_login-message">Ya estás logeado.</p>;
     }
+    
 
     return (
-        <form onSubmit={handleLogin}>
-            <input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" />
-            <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
-            <input type="submit" value="Login" />
-            {error && <p>{error}</p>}
-        </form>
+        <div className="_login-container">
+            <h2 className="_login-title">Iniciar sesión</h2>
+            <form onSubmit={handleLogin} className="_login-form">
+                <input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Usuario" className="_login-input" />
+                <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Contraseña" className="_login-input" />
+                <input type="submit" value="Iniciar sesión" className="_login-submit" />
+                {error && <p className="_login-error">{error}</p>}
+            </form>
+        </div>
     );
 };
 
