@@ -48,4 +48,30 @@ export const getUserByUsernameAndPassword = (username, password) => {
   });
 };
 
+export const insertUser = (username, password) => {
+  return new Promise((resolve, reject) => {
+    const query = 'INSERT INTO users (Nombre, Clave) VALUES (?, ?)';
+    db.query(query, [username, password], (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+};
+
+export const insertCompra = (nombre, apellido, correo, carro, estado) => {
+  return new Promise((resolve, reject) => {
+    const query = 'INSERT INTO compras (Nombre, Apellido, Correo, Carro, Estado) VALUES (?, ?, ?, ?, ?)';
+    db.query(query, [nombre, apellido, correo, carro, estado], (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+};
+
 export default db;
