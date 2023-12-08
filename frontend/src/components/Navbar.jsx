@@ -1,20 +1,26 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
 import "./styles/Navb.css";
 
-const LogoutButton = () => {
+const LogoutButton = ({ pathname }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userType, setUserType] = useState(null);
 
     useEffect(() => {
         const token = localStorage.getItem('sessionToken');
+        const user = localStorage.getItem('user');
         if (token) {
             setIsLoggedIn(true);
+            setUserType(user);
         }
     }, []);
 
     const handleLogout = () => {
         localStorage.removeItem('sessionToken');
+        localStorage.removeItem('user');
         setIsLoggedIn(false);
+        setUserType(null);
         window.location.reload(); 
     };
 
@@ -24,24 +30,19 @@ const LogoutButton = () => {
 
     return (
         isLoggedIn ? 
-        <button className="nav-link logout-button" onClick={handleLogout}>Cerrar sesión</button> :
-        <button className="nav-link login-button" onClick={handleLogin}>Iniciar sesión</button>
+        <div>
+            {userType === 'adm' && <a href="/pedidos" className="nav-link">Pedidos</a>}
+            {userType === '' && <a href="/mispedidos" className="nav-link">Mis Pedidos</a>}
+            <button className="nav-link logout-button" onClick={handleLogout}>Cerrar sesión</button>
+        </div> :
+        <button className={`nav-link login-button ${pathname === '/login' ? 'active' : ''}`} onClick={handleLogin}>Iniciar sesión</button>
     );
 };
 
 function Navb() {
-
-	const showNavbar = () => {
-
-        const navRef = useRef();
-        
-		navRef.current.classList.toggle(
-			"responsive_nav"
-		);
-	};
-    
-
     const [navbar, setNav] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
 
     const changeBackground = () => {
         if (window.scrollY >= 800) {
@@ -58,23 +59,22 @@ function Navb() {
     return (
         <header className={navbar ? "nav flex" : "header flex"}>
             <h1 className="title">Cars in Stock</h1>
-            <nav>
-                <a href="/" className="box">Inicio</a>
-                <a href="/Modelos" className="box">Ve nuestro catalogo</a>
-                <a href="/listas" className="box">Lista de tareas</a>
-                <LogoutButton className="box" />
+            <nav className={isOpen ? "nav-open" : ""}>
+                <a href="/" className={`box ${location.pathname === '/' ? 'active' : ''}`}>Inicio</a>
+                <a href="/Modelos" className={`box ${location.pathname === '/Modelos' ? 'active' : ''}`}>Ve nuestro catalogo</a>
+                <a href="/comprar" className={`box ${location.pathname === '/comprar' ? 'active' : ''}`}>Formulario de Compra</a>
+                <LogoutButton className="box" pathname={location.pathname} />
                 <button
-					className="nav-btn nav-close-btn"
-					onClick={showNavbar}>
-					<FaTimes />
-				</button>    
+                    className="nav-btn nav-close-btn"
+                    onClick={() => setIsOpen(false)}>
+                    <FaTimes />
+                </button>    
             </nav>
             <button
-				className="nav-btn"
-				onClick={showNavbar}>
-				<FaBars />
-			</button>
-
+                className="nav-btn"
+                onClick={() => setIsOpen(true)}>
+                <FaBars />
+            </button>
         </header>
     );
 };
