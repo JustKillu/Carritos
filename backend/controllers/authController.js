@@ -1,6 +1,5 @@
 import { getUserByUsername, getUserByUsernameAndPassword } from '../database/db.js'; 
 import jwt from 'jsonwebtoken'; 
-
 export const login = async (req, res) => {
     const { username, password } = req.body;
 
@@ -19,7 +18,14 @@ export const login = async (req, res) => {
 
         const token = jwt.sign({ username: username }, 'yourSecretKey',{expiresIn:'20m'});
 
-        return res.json({ success: true, message: 'Inicio de sesión exitoso', token: token });
+      
+        return res.json({ 
+            success: true, 
+            message: 'Inicio de sesión exitoso', 
+            token: token, 
+            username: validUser.Nombre, // Envía el nombre de usuario
+            user: validUser.user // Envía el valor 'user'
+        });
         
     } catch (error) {
         console.error(error);
