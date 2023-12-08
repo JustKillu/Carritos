@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/Login.css';
-import Video1 from '../assets/CArrito.mp4';
+
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -9,6 +9,11 @@ const Login = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [error, setError] = useState('');
     const [confirmation, setConfirmation] = useState(null);
+
+    const handleChange = event => {
+        const result = event.target.value.replace(/[^a-z]/gi, '');
+    
+        setUsername(result);}
 
     const navigate = useNavigate();
 
@@ -19,6 +24,7 @@ const Login = () => {
         }
     }, []);
 
+    
     const handleLogin = async (event) => {
         event.preventDefault();
     
@@ -57,6 +63,7 @@ const Login = () => {
             setError('Error del servidor');
         }
     };
+    
 
     const handleRegister = () => {
         navigate('/register');
@@ -67,15 +74,13 @@ const Login = () => {
     }
 
     return (
-        <div className='Videoparallax'>
-            <video autoPlay loop muted className='video1'>
-                <source src={Video1} type="video/mp4" />
-            </video>
+        <div>
+       
 
             <div className="_login-container">
                 <h2 className="_login-title">Iniciar sesión</h2>
                 <form onSubmit={handleLogin} className="_login-form">
-                    <input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Usuario" className="_login-input" />
+                    <input type="text" value={username} onChange={e => {setUsername(e.target.value) ; handleChange(e)}} placeholder="Usuario" className="_login-input" />
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Contraseña" className="_login-input" />
                     <input type="submit" value="Iniciar sesión" className="_login-submit" />
                     <button onClick={handleRegister} className="_register-button">Registrarse</button>

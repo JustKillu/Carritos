@@ -19,7 +19,7 @@ function MisPedidos() {
       {item && (
         <div key={item.id} className="card">
           <h2>{item.Nombre} {item.Apellido}</h2>
-          <p>{item.Correo}</p>
+          <p className='correo'>{item.Correo}</p>
           <p>{item.Carro}</p>
           <p>{item.Estado}</p>
         </div>

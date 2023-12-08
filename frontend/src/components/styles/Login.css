@@ -1,3 +1,4 @@
+
 :root {
     --background-color: black;
     --purpura: #290F56;
@@ -15,7 +16,7 @@
     overflow: hidden;
 }
 
-.Videoparallax .video1 {
+ .video1 {
     position: absolute;
     top: 0;
     left: 0;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles/Comprar.css';
-
+import Video1 from '../assets/CArrito.mp4';
 const Comprar = () => {
   const [modelos, setModelos] = useState([]);
   const [formulario, setFormulario] = useState({
@@ -67,9 +67,13 @@ const Comprar = () => {
 
   return (
     <div className="tarjeta">
+
+            <video autoPlay loop muted className='video1'>
+                <source src={Video1} type="video/mp4" />
+            </video>
       <form className="formulario" onSubmit={handleSubmit}>
         <label>
-          Usuario:
+          Nombre:
           <input type="text" name="nombre" value={formulario.nombre} readOnly />
           {errores.nombre && <p className="error">{errores.nombre}</p>}
         </label>

@@ -21,6 +21,12 @@
   .card p {
     margin-bottom: 10px;
   }
+  .correo {
+    margin-bottom: 10px;
+    position: relative;
+    right: 5px;
+    font-size: 0.7rem;
+  }
   
   .card button {
     background-color: #007BFF;

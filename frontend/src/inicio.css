@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap')
 ;
 
+html::-webkit-scrollbar {
+    width: 0;
+}
 .video1{
     width: 100%;
 }

@@ -36,6 +36,12 @@ function Register() {
             setConfirmation(null); // Limpia el mensaje de confirmación
         }
     };
+    
+    const handleChange = event => {
+        const result = event.target.value.replace(/[^a-z]/gi, '');
+    
+        setUsername(result);
+  };
 
     const handleLoginRedirect = () => {
         navigate('/login');
@@ -43,14 +49,15 @@ function Register() {
 
     return (
         <form onSubmit={handleSubmit} className="register">
-            <label>
-                Nombre de usuario:
-                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-            </label>
-            <label>
-                Contraseña:
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            </label>
+           
+                <h2> Registro</h2>
+                
+                <input type="text" value={username} onChange= {(e) => {setUsername(e.target.value) ; handleChange(e)} } placeholder='Nombre de usuario:' className='Label'/>
+            
+           
+                
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Contraseña:' className='Label' />
+            
             {error && <div className="error">{error}</div>}
             {confirmation && <div className="confirmation">{confirmation}</div>} {/* Muestra el mensaje de confirmación */}
             <input type="submit" value="Registrarse" />

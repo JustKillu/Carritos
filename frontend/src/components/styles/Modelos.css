@@ -1,13 +1,14 @@
+
 .Modeloscard{
    padding: 2rem;
    font-size: 2rem;
-   background-color: black;
-   height: 1000px;
+   background-color: #c7c7c7;
+   height: auto;
    color: #fff;
 }
 .content{
     display: flex;
-    width: 60%;
+    width: 100%;
     padding: 20px;
     text-align: justify;
     flex-direction: column;
@@ -24,6 +25,12 @@
     padding: 0;
     justify-content: center;
     align-items: center;
+    background: transparent;
+    scroll-snap-type: y mandatory;
+}
+
+.wrapper::-webkit-scrollbar {
+    width: 0;
 }
 
 .titulo{
@@ -108,9 +115,8 @@
     padding: 15px;
     margin: 15px;
     text-align:center;
-    background-color: white;
-    width: 300px;
-    
+    background-color: #F0F0F0;
+    box-shadow: 0 0 5px white;
     color: black; /* color del texto dentro de las tarjetas */
     
   }
@@ -135,3 +141,20 @@
     justify-content: space-around;
     width: 100%;
  }
+
+.content h1{
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 960px) {
+    .flex{
+        flex-direction: column;
+        align-items: center;
+    }
+  .Modeloscard{
+        height: auto;
+    }
+}
+    
