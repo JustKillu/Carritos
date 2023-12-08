@@ -3,33 +3,33 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
-    margin: 0 auto; /* Cambia el margen superior a 0 para centrar verticalmente */
+    width: 500px;
+    height: 350px;
     padding: 20px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.8);
+    background: #c7c7c7;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: absolute; /* Agrega posición absoluta */
-    top: 50%; /* Centra verticalmente */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta la posición para centrar perfectamente */
-}
+    box-shadow: 0 0 100px var(--purpura);
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); }
 
+    
 .register label {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-bottom: 10px;
     font-size: 1rem;
-    color: #333;
+    color: var(--purpura);
 }
 
 .register input[type="text"],
 .register input[type="password"] {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--purpura);
     font-size: 1rem;
 }
 
@@ -39,7 +39,7 @@
     padding: 10px;
     border-radius: 5px;
     border: none;
-    background-color: #007BFF;
+    background-color: var(--purpura);
     color: white;
     font-size: 1rem;
     cursor: pointer;
@@ -47,7 +47,7 @@
 
 .register input[type="submit"]:hover,
 .register .login-button:hover {
-    background-color: #0056b3;
+    background-color: #452a72a9;
 }
 
 .error {

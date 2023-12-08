@@ -23,7 +23,7 @@ function Modelos() {
         <div className='content'>
           <h1>Modelos</h1>
           {modelos ? (
-            <div>
+            <div className='flex'>
               {modelos.map((modelo) => (
                 <div key={modelo.id} className='card'>
                   <img src={modelo.Img} alt={modelo.Modelo} />
