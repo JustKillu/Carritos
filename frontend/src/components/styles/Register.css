@@ -1,0 +1,70 @@
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto; /* Cambia el margen superior a 0 para centrar verticalmente */
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Agrega posición absoluta */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición para centrar perfectamente */
+}
+
+.register label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.register input[type="text"],
+.register input[type="password"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.register input[type="submit"],
+.register .login-button {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.register input[type="submit"]:hover,
+.register .login-button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f8d7da;
+    color: #721c24;
+    text-align: center;
+}
+.confirmation {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #d4edda;
+    color: #155724;
+    text-align: center;
+}

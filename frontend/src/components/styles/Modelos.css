@@ -31,6 +31,7 @@
     margin-top: 1rem;
     font-size: 4rem;
     text-shadow: black 0.1em 0.1em 0.2em;
+    
 }
 
 .Head{
@@ -99,3 +100,22 @@
 .titulo{
     transform: translateZ(-10px) scale(2);
 }
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    background-color: white;
+    color: black; /* color del texto dentro de las tarjetas */
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card h3, .card p {
+    color: black; /* color del texto de los títulos y párrafos dentro de las tarjetas */
+  }
+  
