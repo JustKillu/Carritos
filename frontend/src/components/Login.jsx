@@ -54,8 +54,10 @@ const Login = () => {
                     setConfirmation(null); // Limpia el mensaje de confirmación después de 2 segundos
                     navigate('/'); // Luego redirige a la página de inicio
                 }, 2000);
-                
-            } else {
+
+                    
+            }
+             else {
                 setError(data.message);
             }
         } catch (error) {
@@ -83,7 +85,7 @@ const Login = () => {
                     <input type="text" value={username} onChange={e => {setUsername(e.target.value) ; handleChange(e)}} placeholder="Usuario" className="_login-input" />
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Contraseña" className="_login-input" />
                     <input type="submit" value="Iniciar sesión" className="_login-submit" />
-                    <button onClick={handleRegister} className="_register-button">Registrarse</button>
+                    <input type="button" className="registro" onClick={handleRegister} value="Registrarse" />
                     {error && <p className="_login-error">{error}</p>}
                     {confirmation && <div className="confirmation">{confirmation}</div>} {/* Muestra el mensaje de confirmación */}
 

@@ -157,4 +157,10 @@
         height: auto;
     }
 }
+@media screen and (max-width: 550px){
+
+    .titulo{
+        font-size: 3rem;
+    }
+}
     

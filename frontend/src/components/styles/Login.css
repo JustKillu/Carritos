@@ -4,29 +4,6 @@
     --purpura: #290F56;
     --text-color: #fff;
 }
-.Videoparallax {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -9999;
-    overflow: hidden;
-}
-
- .video1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1000;
-    overflow: hidden;
-}
 
 ._login-message {
     position: absolute;
@@ -81,6 +58,22 @@
     cursor: pointer;
 }
 
+.registro{
+    margin: 6px 100px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--purpura);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.registro:hover{
+    background-color: #452a72a9;
+    color: var(--text-color);
+    border: 1px solid var(--purpura);
+}
+
 ._login-submit:hover, ._login-container ._register-button:hover {
     background-color: #452a72a9;
     color: var(--text-color);
@@ -102,7 +95,18 @@
     width: 100%;
 }
 
-._login-submit, ._register-button {
+._login-submit  {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--purpura);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.registro{
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
@@ -121,4 +125,32 @@
     background-color: #d4edda;
     color: #155724;
     text-align: center;
+}
+
+@media screen and (max-width: 630px) {
+    ._login-container {
+        display: flex;
+        width: 75%;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    ._login-submit {
+        width: auto;
+        height: auto;
+        font-size: small;
+    }
+
+    .registro{
+        width: auto;
+        height: auto;
+        font-size: small;
+    }
+
 }
