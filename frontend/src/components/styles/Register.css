@@ -83,3 +83,11 @@ body{
     font-size: 2.5rem;
     color: var(--purpura);
 }
+
+
+@media screen and (max-width: 550px) {
+    .register {
+        width: 90%;
+    }
+    
+}
